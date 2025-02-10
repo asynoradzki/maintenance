@@ -1,8 +1,9 @@
 import React, { createContext, useState, useCallback } from "react";
 import { ThemeContextType } from "../model/ThemeContextType";
+import { THEME } from "../constants/constants";
 
 function getThemeFromLocalStorage() {
-    const themeFromLocalStorage = localStorage.getItem("THEME") as "light" | "dark" | null;
+    const themeFromLocalStorage = localStorage.getItem(THEME) as "light" | "dark" | null;
     return themeFromLocalStorage === "dark" ? "dark" : "light";
 }
 
