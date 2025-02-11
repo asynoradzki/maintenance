@@ -1,7 +1,7 @@
 import { useContext } from "react";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import { ThemeProvider as StyledThemeProvider } from "styled-components";
-import { Button, createTheme, ThemeProvider as MUIThemePrivider } from "@mui/material";
+import { createTheme, ThemeProvider as MUIThemePrivider } from "@mui/material";
 import "./App.css";
 import GlobalStyle from "./globalStyle";
 import AppRouter from "./router/App.router";
@@ -15,6 +15,15 @@ function App() {
     const darkTheme = createTheme({
         palette: {
             mode: "dark",
+        },
+        components: {
+            MuiPaper: {
+                styleOverrides: {
+                    root: {
+                        backgroundColor: "default", // Dark mode color
+                    },
+                },
+            },
         },
     });
 
@@ -34,8 +43,8 @@ function App() {
                         <AppRouter />
                         <GlobalStyle />
                         <ToastContainer />
-                        <div>App {currentTheme}</div>
-                        <Button variant="contained">MUI BUTTON</Button>
+                        {/* <div>App {currentTheme}</div> */}
+                        {/* <Button variant="contained">MUI BUTTON</Button> */}
                     </MUIThemePrivider>
                 </StyledThemeProvider>
             </UserContextProvider>

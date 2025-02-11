@@ -4,4 +4,4 @@ export const THEME: string = "THEME";
 
 export const CLOSE_TIME: number = 2000;
 
-export const MIN_PASSWORD_LENGTH: number = 1;
+export const MIN_PASSWORD_LENGTH: number = 3;
